@@ -346,7 +346,7 @@ sdk.NewEvent(
     sdk.NewAttribute("custom", "from contract"),
 ),
 
-// instantiating contract (first dipatched message)
+// instantiating contract (first dispatched message)
 sdk.NewEvent(
     "instantiate",
     sdk.NewAttribute("code_id", fmt.Sprintf("%d", msg.CodeID)),
@@ -417,4 +417,4 @@ sdk.NewEvent(
 
 All IBC entry points are only called by external accounts and not from contracts. They need to contain proofs of state of other blockchains and cannot be called by other contracts on the same chain. Therefore, the event emitted are not essential for cross-contract calls, and `x/wasm` does not emit custom events for these actions.
 
-There are well-defined events emitted by the IBC base layer and are required for the relayer functionality. If you wish to subscribe to these, you can find them [defined in the `ibc-go` codebase](https://github.com/cosmos/ibc-go/blob/main/modules/core/04-channel/keeper/events.go).
+There are well-defined events emitted by the IBC base layer that are required for the relayer functionality. If you wish to subscribe to these, you can find them [defined in the `ibc-go` codebase](https://github.com/cosmos/ibc-go/blob/main/modules/core/04-channel/keeper/events.go).
